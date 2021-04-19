@@ -1,6 +1,10 @@
 import * as React from 'react';
 import { BottomNavigation, Text } from 'react-native-paper';
 import FlexboxScreen from './FlexboxScreen';
+import FlatListApiScreen from './FlatlistApiScreen'
+import ScrollViewScreen from './ScrollViewScreen';
+import SectionsListScreen from './SectionListScreen'
+import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 
 const MusicRoute = () => <Text>Music</Text>;
 const AlbumsRoute = () => <Text>Albums</Text>;
@@ -19,10 +23,10 @@ const NativePaperScreen = () => {
   ]);
 
   const renderScene = BottomNavigation.SceneMap({
-    music: MusicRoute,
-    albums: AlbumsRoute,
-    recents: RecentsRoute,
-    flex: FlexboxRoute,
+    music: FlatListApiScreen,
+    albums: ScrollViewScreen,
+    recents: SectionsListScreen,
+    flex: FlexboxScreen,
   });
 
   return (
