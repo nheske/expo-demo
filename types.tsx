@@ -20,3 +20,22 @@ export type TabOneParamList = {
 export type TabTwoParamList = {
   TabTwoScreen: undefined;
 };
+
+export type FlexboxParamList = {
+  FlexboxScreen: undefined;
+};
+
+export type SectionListApiParamList = {
+  SectionListScreen: undefined;
+};
+export type FlatListApiParamList = {
+  FlatListApiScreen: undefined;
+};
+
+export type ScrollViewParamList = {
+  ScrollViewScreen: undefined;
+};
+
+export type NativePaperParamList = {
+  NativePaperScreen: undefined;
+};

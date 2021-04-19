@@ -12,7 +12,12 @@ import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
-import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
+import FlexboxScreen from '../screens/FlexboxScreen';
+import ScrollViewScreen from '../screens/ScrollViewScreen';
+import SectionListScreen from '../screens/SectionListScreen';
+import FlatlistApiScreen from '../screens/FlatlistApiScreen';
+import NativePaperScreen from '../screens/NativePaperScreen';
+import { BottomTabParamList, TabOneParamList, TabTwoParamList, FlexboxParamList, ScrollViewParamList, SectionListApiParamList, FlatListApiParamList, NativePaperParamList } from '../types';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -23,7 +28,7 @@ export default function BottomTabNavigator() {
     <BottomTab.Navigator
       initialRouteName="TabOne"
       tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}>
-      <BottomTab.Screen
+      {/* <BottomTab.Screen
         name="TabOne"
         component={TabOneNavigator}
         options={{
@@ -33,6 +38,42 @@ export default function BottomTabNavigator() {
       <BottomTab.Screen
         name="TabTwo"
         component={TabTwoNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+        }}
+      /> */}
+      <BottomTab.Screen
+        name="NativePaper"
+        component={NativePaperNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+        }}
+      />
+      <BottomTab.Screen
+        name="Flexbox"
+        component={FlexboxNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+        }}
+      />
+      <BottomTab.Screen
+        name="Scroll"
+        component={ScrollViewNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+        }}
+      />
+      <BottomTab.Screen
+        name="FlatListApi"
+        component={FlatlistApiNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+        }}
+      />
+      
+      <BottomTab.Screen
+        name="SectionList"
+        component={SectionListNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
         }}
@@ -74,5 +115,75 @@ function TabTwoNavigator() {
         options={{ headerTitle: 'Tab Two Title' }}
       />
     </TabTwoStack.Navigator>
+  );
+}
+
+const FlexboxStack = createStackNavigator<FlexboxParamList>();
+
+function FlexboxNavigator() {
+  return (
+    <FlexboxStack.Navigator>
+      <FlexboxStack.Screen
+        name="FlexboxScreen"
+        component={FlexboxScreen}
+        options={{ headerTitle: 'Flexbox Title' }}
+      />
+    </FlexboxStack.Navigator>
+  );
+}
+
+const ScrollViewStack = createStackNavigator<ScrollViewParamList>();
+
+function ScrollViewNavigator() {
+  return (
+    <ScrollViewStack.Navigator>
+      <ScrollViewStack.Screen
+        name="ScrollViewScreen"
+        component={ScrollViewScreen}
+        options={{ headerTitle: 'ScrollView Title' }}
+      />
+    </ScrollViewStack.Navigator>
+  );
+}
+
+const FlatListApiStack = createStackNavigator<FlatListApiParamList>();
+
+function FlatlistApiNavigator() {
+  return (
+    <FlatListApiStack.Navigator>
+      <FlatListApiStack.Screen
+        name="FlatlistApiScreen"
+        component={FlatlistApiScreen}
+        options={{ headerTitle: 'FlatList API Title' }}
+      />
+    </FlatListApiStack.Navigator>
+  );
+}
+
+const SectionListStack = createStackNavigator<SectionListParamList>();
+
+function SectionListNavigator() {
+  return (
+    <SectionListStack.Navigator>
+      <SectionListStack.Screen
+        name="SectionListScreen"
+        component={SectionListScreen}
+        options={{ headerTitle: 'SectionList Title' }}
+      />
+    </SectionListStack.Navigator>
+  );
+}
+
+const NativePaperStack = createStackNavigator<NativePaperParamList>();
+
+function NativePaperNavigator() {
+  return (
+    <NativePaperStack.Navigator>
+      <NativePaperStack.Screen
+        name="NativePaperScreen"
+        component={NativePaperScreen}
+        options={{ headerTitle: 'NativePaper Title' }}
+      />
+    </NativePaperStack.Navigator>
   );
 }
